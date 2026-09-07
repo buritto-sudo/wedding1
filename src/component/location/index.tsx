@@ -31,19 +31,17 @@ export const Location = () => {
             <BusIcon className="transportation-icon" />
           </div>
           <div className="heading">대중교통</div>
-          <div />
           <div className="content">
             * 리무진버스
             <br />
-            5001번(40분소요)보람병원 입구에서 하차,도보5분
-          <div />
+            5001번(40분 소요) 보람병원 입구에서 하차, 도보 5분
+          </div>
           <div className="content">
             * KTX
             <br />
-            청량리역-태화강역(2시간10분),롯데호텔 울산까지 택시로10분
+            청량리역-태화강역(2시간 10분), 롯데호텔 울산까지 택시로 10분
             <br />
-            서울역-울산역(2시간30분),롯데호텔 울산까지 택시로 40분소요
-            <br />
+            서울역-울산역(2시간 30분), 롯데호텔 울산까지 택시로 40분 소요
           </div>
         </div>
 
@@ -53,7 +51,6 @@ export const Location = () => {
             <CarIcon className="transportation-icon" />
           </div>
           <div className="heading">자가용</div>
-          <div />
           <div className="content">
             네이버 지도, 카카오 네비, 티맵 등 이용
             <br />
@@ -62,11 +59,6 @@ export const Location = () => {
             - 주차 요금은 무료입니다.
             <br />
             (주차장 이용 시 웨딩홀과 바로 연결)
-          </div>
-          <div />
-          <div className="content">
-            <b>
-            </b>
           </div>
         </div>
       </LazyDiv>
