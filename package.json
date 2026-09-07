@@ -5,7 +5,7 @@
   "author": "Ju Ho Nam <jhnamnam@gmail.com> (https://juhonamnam.github.io/)",
   "license": "MIT",
   "private": true,
-  "homepage": "https://github.com/buritto-sudo/wedding1",
+  "homepage": "https://buritto-sudo.github.io/wedding1/",
   "type": "module",
   "scripts": {
     "dev": "vite",
