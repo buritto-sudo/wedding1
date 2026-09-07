@@ -1,5 +1,5 @@
 
-- Node.js (버전은 `.nvmrc` 파일에 명시)
+- Node.js (버전은 `.nvmrc` 파일에 명시
 
 ## 시작하기
 
