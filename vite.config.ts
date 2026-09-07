@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react"
 import svgr from "vite-plugin-svgr"
 import fs from "fs"
 
-import pkg from "./package.json"
 import { createHtmlPlugin } from "vite-plugin-html"
 import {
   GROOM_FULLNAME,
@@ -13,16 +12,11 @@ import {
   WEDDING_DATE_FORMAT,
 } from "./src/const"
 
+// Vercel 기본 출력 폴더인 'dist'로 변경
 const distFolder = "dist"
 
-let base = "/"
-
-try {
-  const url = new URL(pkg.homepage)
-  base = url.pathname
-} catch (e) {
-  base = pkg.homepage || "/"
-}
+// Vercel 루트 경로 설정
+const base = "/"
 
 // https://vite.dev/config/
 export default defineConfig({
