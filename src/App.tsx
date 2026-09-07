@@ -8,7 +8,6 @@ import { Gallery } from "./component/gallery"
 import { Information } from "./component/information"
 import { GuestBook } from "./component/guestbook"
 import { LazyDiv } from "./component/lazyDiv"
-import { ShareButton } from "./component/shareButton"
 import { STATIC_ONLY } from "./env"
 
 /**
@@ -50,9 +49,6 @@ function App() {
           {/* 방명록 섹션 (정적 모드가 아닐 때만 표시) */}
           {!STATIC_ONLY && <GuestBook />}
         </LazyDiv>
-
-        {/* 카카오톡/링크 공유 버튼 */}
-        <ShareButton />
       </div>
     </div>
   )
