@@ -43,7 +43,7 @@ export const LOCATION_ADDRESS = "울산광역시 남구 삼산로 282 롯데호�
  * 카카오톡 공유 시 사용할 위치 정보 주소
  * 필요에 따라 LOCATION과 다르게 설정할 수 있습니다.
  */
-export const SHARE_ADDRESS = "르엘컨벤션웨딩홀"
+export const SHARE_ADDRESS = "울산 롯데호텔 르엘컨벤션웨딩홀"
 
 /**
  * 카카오톡 공유 시 표시될 위치 제목
