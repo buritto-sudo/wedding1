@@ -27,7 +27,7 @@ export const WEDDING_DATE_FORMAT = `YYYY년 MMMM D일 dddd A h시${WEDDING_DATE.
  * 예식 당월 휴무일 (달력 표시용)
  * 예: 8월 15일 광복절
  */
-export const HOLIDAYS = [15]
+export const HOLIDAYS = []
 
 /**
  * 예식 장소 명칭
@@ -48,7 +48,7 @@ export const SHARE_ADDRESS = "르엘컨벤션웨딩홀"
 /**
  * 카카오톡 공유 시 표시될 위치 제목
  */
-export const SHARE_ADDRESS_TITLE = "울산 롯데호텔 르엘컨벤션웨딩홀"
+export const SHARE_ADDRESS_TITLE = "르엘컨벤션웨딩홀"
 
 /**
  * 지도 서비스(네이버, 카카오)에 사용할 좌표 [경도, 위도]
