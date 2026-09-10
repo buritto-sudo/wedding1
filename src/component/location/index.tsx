@@ -1,14 +1,10 @@
-import { CarIcon } from "../icons"
-
 export const Location = () => {
   return (
     <div className="location-section">
       {/* 자가용 및 주차 안내 */}
       <div className="location-info" style={{ display: "block" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-          <div className="transportation-icon-wrapper" style={{ margin: 0 }}>
-            <CarIcon className="transportation-icon" />
-          </div>
+          <span style={{ fontSize: "20px" }}>🚗</span>
           <div className="heading" style={{ margin: 0, fontWeight: "bold" }}>자가용 및 주차 안내</div>
         </div>
         
