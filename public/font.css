@@ -1,14 +1,29 @@
-@font-face {
-  font-family: "MapoGoldenPier";
-  src: url("./MapoGoldenPierA.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
+/* 1. 선명하고 또렷한 프리텐다드(Pretendard) 폰트 불러오기 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+
+/* 2. 사이트 전체 기본 폰트를 흐물거림 없는 고딕으로 교체 */
+*, body, html {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-@font-face {
-  font-family: "Allura";
-  src: url("./AlluraRegular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+/* 3. 날짜, 시간, 요일 영역을 굵고 시원하게 강조 */
+.date, 
+.time, 
+.day, 
+.d-day, 
+.wedding-date, 
+.calendar-date,
+[class*="date"],
+[class*="time"] {
+  font-weight: 700 !important;      /* 진하고 굵은 두께 */
+  letter-spacing: -0.02em !important; /* 글자 간격을 좁혀 단단하고 쨍한 느낌 */
+  color: #111827 !important;         /* 흐릿한 회색 대신 또렷한 다크 차콜 블랙 */
 }
 
+/* 4. 메인 화면 제목 및 영문 포인트 */
+h1, h2, .title {
+  font-weight: 700 !important;
+  letter-spacing: -0.01em;
+}
