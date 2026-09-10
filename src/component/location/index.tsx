@@ -1,176 +1,95 @@
+import { Map } from "./map"
+import CarIcon from "../../icons/car-icon.svg?react"
+import BusIcon from "../../icons/bus-icon.svg?react"
+import { LazyDiv } from "../lazyDiv"
 import { LOCATION, LOCATION_ADDRESS } from "../../const"
-import { NaverMap } from "./naverMap"
 
+/**
+ * 오시는 길 정보를 표시하는 컴포넌트입니다.
+ * 지도와 대중교통, 자가용 이용 방법을 안내합니다.
+ *
+ * @returns {JSX.Element} 오시는 길 섹션
+ */
 export const Location = () => {
   return (
-    <div className="card location">
-      <div className="title">오시는 길</div>
-      <div className="location-name">{LOCATION}</div>
-      <div className="location-address">{LOCATION_ADDRESS}</div>
-
-      {/* 1. 네이버 지도 복원 */}
-      <div className="map-wrapper" style={{ margin: "16px 0" }}>
-        <NaverMap />
-      </div>
-
-      {/* 2. 지도 앱 바로가기 버튼 복원 */}
-      <div
-        className="map-buttons"
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "8px",
-          marginBottom: "24px",
-        }}
-      >
-        <a
-          href={`https://map.naver.com/v5/search/${encodeURIComponent(LOCATION)}`}
-          target="_blank"
-          rel="noreferrer"
-          className="map-btn"
-          style={{
-            padding: "8px 14px",
-            backgroundColor: "#03c75a",
-            color: "#fff",
-            borderRadius: "6px",
-            fontSize: "13px",
-            textDecoration: "none",
-            fontWeight: "600",
-          }}
-        >
-          네이버 지도
-        </a>
-        <a
-          href={`https://map.kakao.com/link/search/${encodeURIComponent(LOCATION)}`}
-          target="_blank"
-          rel="noreferrer"
-          className="map-btn"
-          style={{
-            padding: "8px 14px",
-            backgroundColor: "#fee500",
-            color: "#191919",
-            borderRadius: "6px",
-            fontSize: "13px",
-            textDecoration: "none",
-            fontWeight: "600",
-          }}
-        >
-          카카오맵
-        </a>
-        <a
-          href={`tmap://search?name=${encodeURIComponent(LOCATION)}`}
-          className="map-btn"
-          style={{
-            padding: "8px 14px",
-            backgroundColor: "#1f2937",
-            color: "#fff",
-            borderRadius: "6px",
-            fontSize: "13px",
-            textDecoration: "none",
-            fontWeight: "600",
-          }}
-        >
-          티맵
-        </a>
-      </div>
-
-      {/* 3. 깔끔하게 정돈된 자가용 및 주차 안내 카드 */}
-      <div className="location-info" style={{ display: "block", marginTop: "16px" }}>
-        <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
-          <span style={{ fontSize: "20px" }}>🚗</span>
-          <div className="heading" style={{ margin: 0, fontWeight: "bold" }}>자가용 및 주차 안내</div>
+    <>
+      {/* 지도 및 주소 섹션 */}
+      <LazyDiv className="card location">
+        <h2 className="english">Location</h2>
+        <div className="addr">
+          {LOCATION}
+          <div className="detail">{LOCATION_ADDRESS}</div>
         </div>
-        
-        <div className="content" style={{ textAlign: "left", lineHeight: "1.6", width: "100%", wordBreak: "keep-all" }}>
-          <div style={{ marginBottom: "14px", color: "#374151" }}>
-            네비게이션(네이버 지도, 카카오내비, 티맵):<br />
-            <b style={{ color: "#111827", fontSize: "15px" }}>르엘컨벤션웨딩홀</b> 검색
+        <Map />
+      </LazyDiv>
+
+      {/* 대중교통 및 자가용 안내 섹션 */}
+      <LazyDiv className="card location">
+        {/* 대중교통 안내 */}
+        <div className="location-info" style={{ display: "block", marginBottom: "24px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+            <div className="transportation-icon-wrapper" style={{ margin: 0 }}>
+              <BusIcon className="transportation-icon" />
+            </div>
+            <div className="heading" style={{ margin: 0, fontWeight: "bold" }}>대중교통</div>
           </div>
-
-          {/* 본관 주차장 카드 */}
-          <div style={{
-            backgroundColor: "#f9fafb",
-            border: "1px solid #e5e7eb",
-            borderRadius: "10px",
-            padding: "14px 16px",
-            marginBottom: "12px"
-          }}>
-            <div style={{ fontWeight: "700", color: "#1f2937", marginBottom: "4px" }}>
-              🚗 본관 주차장
+          
+          <div className="content" style={{ textAlign: "left", lineHeight: "1.6", width: "100%", wordBreak: "keep-all" }}>
+            <div style={{ marginBottom: "8px" }}>
+              <b>* 리무진버스</b>
+              <br />
+              5001번 (40분 소요) 보람병원 입구 하차, 도보 5분
             </div>
-            <div style={{ fontSize: "13.5px", color: "#4b5563" }}>
-              롯데백화점 · 호텔 · 별관 주차장<br />
-              <span style={{ color: "#2563eb", fontWeight: "600" }}>* 뷔페에서 주차권 발급</span>
-            </div>
-          </div>
-
-          {/* 대체 주차장 카드 */}
-          <div style={{
-            backgroundColor: "#f9fafb",
-            border: "1px solid #e5e7eb",
-            borderRadius: "10px",
-            padding: "14px 16px"
-          }}>
-            <div style={{ fontWeight: "700", color: "#1f2937", marginBottom: "12px" }}>
-              🅿️ 대체 주차장 안내
-            </div>
-            
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px", fontSize: "13px" }}>
-              {/* 제1대체 */}
-              <div>
-                <div style={{ fontWeight: "700", color: "#111827", fontSize: "13.5px" }}>
-                  제1대체 : 극동(이어도)주차장
-                </div>
-                <div style={{ color: "#2563eb", fontWeight: "600", marginTop: "2px" }}>
-                  도보 3분 · 뷔페에서 주차권 발급
-                </div>
-                <div style={{ color: "#6b7280", fontSize: "12px", marginTop: "1px" }}>
-                  울산 남구 달삼로 82
-                </div>
-              </div>
-
-              {/* 제2대체 */}
-              <div style={{ borderTop: "1px dashed #e5e7eb", paddingTop: "10px" }}>
-                <div style={{ fontWeight: "700", color: "#111827", fontSize: "13.5px" }}>
-                  제2대체 : 공구월드 상가 옆 공영주차장
-                </div>
-                <div style={{ color: "#059669", fontWeight: "600", marginTop: "2px" }}>
-                  도보 7분 · 주말 무료 주차
-                </div>
-                <div style={{ color: "#6b7280", fontSize: "12px", marginTop: "1px" }}>
-                  울산 남구 갈밭로 16
-                </div>
-              </div>
-
-              {/* 제3대체 */}
-              <div style={{ borderTop: "1px dashed #e5e7eb", paddingTop: "10px" }}>
-                <div style={{ fontWeight: "700", color: "#111827", fontSize: "13.5px" }}>
-                  제3대체 : 삼산동 1공영주차장
-                </div>
-                <div style={{ color: "#059669", fontWeight: "600", marginTop: "2px" }}>
-                  도보 7분 · 주말 무료 주차
-                </div>
-                <div style={{ color: "#6b7280", fontSize: "12px", marginTop: "1px" }}>
-                  울산 남구 삼산동 1622-3
-                </div>
-              </div>
-
-              {/* 제4대체 */}
-              <div style={{ borderTop: "1px dashed #e5e7eb", paddingTop: "10px" }}>
-                <div style={{ fontWeight: "700", color: "#111827", fontSize: "13.5px" }}>
-                  제4대체 : 농수산물 하이파킹 유료주차장
-                </div>
-                <div style={{ color: "#2563eb", fontWeight: "600", marginTop: "2px" }}>
-                  도보 7분 · 뷔페에서 주차권 발급
-                </div>
-                <div style={{ color: "#6b7280", fontSize: "12px", marginTop: "1px" }}>
-                  울산 남구 삼산동 1622-1
-                </div>
-              </div>
+            <div>
+              <b>* KTX</b>
+              <br />
+              · 청량리역 - 태화강역 (2시간 10분), 택시 10분
+              <br />
+              · 서울역 - 울산역 (2시간 30분), 택시 40분 소요
             </div>
           </div>
         </div>
-      </div>
-    </div>
+
+        {/* 자가용 안내 */}
+        <div className="location-info" style={{ display: "block" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "8px" }}>
+            <div className="transportation-icon-wrapper" style={{ margin: 0 }}>
+              <CarIcon className="transportation-icon" />
+            </div>
+            <div className="heading" style={{ margin: 0, fontWeight: "bold" }}>자가용 및 주차 안내</div>
+          </div>
+          
+          <div className="content" style={{ textAlign: "left", lineHeight: "1.6", width: "100%", wordBreak: "keep-all" }}>
+            네이버 지도, 카카오내비, 티맵 이용
+            <br />
+            <b>르엘컨벤션웨딩홀</b> 검색
+            <br />
+            <br />
+            <b>[본관 주차장]</b>
+            <br />
+            · 롯데백화점, 롯데호텔, 별관 주차장 (뷔페에서 주차권 발급)
+            <br />
+            <br />
+            <b>[대체 주차장 안내]</b>
+            <br />
+            · <b>제1대체</b> : 극동(이어도)주차장 (도보 3분 / 뷔페에서 주차권 발급)
+            <br />
+            &nbsp;&nbsp;울산 남구 달삼로 82
+            <br />
+            · <b>제2대체</b> : 공구월드 상가 옆 공영주차장 (도보 7분 / 주말 무료)
+            <br />
+            &nbsp;&nbsp;울산 남구 갈밭로 16
+            <br />
+            · <b>제3대체</b> : 삼산동 1공영주차장 (도보 7분 / 주말 무료)
+            <br />
+            &nbsp;&nbsp;울산 남구 삼산동 1622-3
+            <br />
+            · <b>제4대체</b> : 농수산물 하이파킹 유료주차장 (도보 7분 / 뷔페에서 주차권 발급)
+            <br />
+            &nbsp;&nbsp;울산 남구 삼산동 1622-1
+          </div>
+        </div>
+      </LazyDiv>
+    </>
   )
 }
