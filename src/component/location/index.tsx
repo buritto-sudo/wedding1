@@ -1,8 +1,81 @@
+import { LOCATION, LOCATION_ADDRESS } from "../../const"
+import { NaverMap } from "./naverMap"
+
 export const Location = () => {
   return (
-    <div className="location-section">
-      {/* 자가용 및 주차 안내 */}
-      <div className="location-info" style={{ display: "block" }}>
+    <div className="card location">
+      <div className="title">오시는 길</div>
+      <div className="location-name">{LOCATION}</div>
+      <div className="location-address">{LOCATION_ADDRESS}</div>
+
+      {/* 1. 네이버 지도 복원 */}
+      <div className="map-wrapper" style={{ margin: "16px 0" }}>
+        <NaverMap />
+      </div>
+
+      {/* 2. 지도 앱 바로가기 버튼 복원 */}
+      <div
+        className="map-buttons"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "8px",
+          marginBottom: "24px",
+        }}
+      >
+        <a
+          href={`https://map.naver.com/v5/search/${encodeURIComponent(LOCATION)}`}
+          target="_blank"
+          rel="noreferrer"
+          className="map-btn"
+          style={{
+            padding: "8px 14px",
+            backgroundColor: "#03c75a",
+            color: "#fff",
+            borderRadius: "6px",
+            fontSize: "13px",
+            textDecoration: "none",
+            fontWeight: "600",
+          }}
+        >
+          네이버 지도
+        </a>
+        <a
+          href={`https://map.kakao.com/link/search/${encodeURIComponent(LOCATION)}`}
+          target="_blank"
+          rel="noreferrer"
+          className="map-btn"
+          style={{
+            padding: "8px 14px",
+            backgroundColor: "#fee500",
+            color: "#191919",
+            borderRadius: "6px",
+            fontSize: "13px",
+            textDecoration: "none",
+            fontWeight: "600",
+          }}
+        >
+          카카오맵
+        </a>
+        <a
+          href={`tmap://search?name=${encodeURIComponent(LOCATION)}`}
+          className="map-btn"
+          style={{
+            padding: "8px 14px",
+            backgroundColor: "#1f2937",
+            color: "#fff",
+            borderRadius: "6px",
+            fontSize: "13px",
+            textDecoration: "none",
+            fontWeight: "600",
+          }}
+        >
+          티맵
+        </a>
+      </div>
+
+      {/* 3. 깔끔하게 정돈된 자가용 및 주차 안내 카드 */}
+      <div className="location-info" style={{ display: "block", marginTop: "16px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
           <span style={{ fontSize: "20px" }}>🚗</span>
           <div className="heading" style={{ margin: 0, fontWeight: "bold" }}>자가용 및 주차 안내</div>
