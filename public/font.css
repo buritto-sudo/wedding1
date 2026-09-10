@@ -1,13 +1,40 @@
-@font-face {
-  font-family: "MapoGoldenPier";
-  src: url("./MapoGoldenPierA.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
+/* 1. 단정하고 우아한 조선명조 & 선명한 프리텐다드 웹폰트 로드 */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/ChosunNm.woff");
 
 @font-face {
-  font-family: "Allura";
-  src: url("./AlluraRegular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
+  font-family: "ChosunNm";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/ChosunNm.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 2. 전체 기본 서체: 흐물거리지 않고 단정한 고급 명조체 */
+*, body, html {
+  font-family: "ChosunNm", "Batang", "Noto Serif KR", serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.75;
+}
+
+/* 3. 날짜, 시간, 숫자: 눈에 확 들어오도록 또렷한 프리텐다드 볼드 적용 */
+.date, 
+.time, 
+.day, 
+.d-day, 
+.wedding-date, 
+.calendar-date,
+[class*="date"],
+[class*="time"],
+.countdown {
+  font-family: "Pretendard", -apple-system, sans-serif !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.01em !important;
+  color: #1f2937 !important;
+}
+
+/* 4. 제목 및 이름 */
+h1, h2, .title, .names {
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
 }
