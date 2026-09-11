@@ -32,7 +32,7 @@ export const HOLIDAYS = []
 /**
  * 예식 장소 명칭
  */
-export const LOCATION = "롯데호텔 2층 르엘컨벤션웨딩홀 크리스탈볼룸"
+export const LOCATION = "울산롯데호텔 2층 르엘컨벤션웨딩홀 크리스탈볼룸"
 
 /**
  * 예식 장소 상세 주소
