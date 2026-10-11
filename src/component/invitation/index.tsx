@@ -38,20 +38,25 @@ export const Invitation = () => {
         <div className="break" />
 
         {/* 혼주 및 신랑 정보 */}
-        <div className="name">
+        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.3" }}>
           {GROOM_FATHER} · {GROOM_MOTHER}
-          <span className="relation">
+          <span className="relation" style={{ margin: "0 6px", color: "#555" }}>
             의 <span className="relation-name">{GROOM_TITLE}</span>
           </span>{" "}
-          {GROOM_FULLNAME}
+          <span style={{ fontSize: "1.3rem", fontWeight: "bold", color: "#111" }}>
+            {GROOM_FULLNAME}
+          </span>
         </div>
+
         {/* 혼주 및 신부 정보 */}
-        <div className="name">
+        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.3" }}>
           {BRIDE_FATHER} · {BRIDE_MOTHER}
-          <span className="relation">
+          <span className="relation" style={{ margin: "0 6px", color: "#555" }}>
             의 <span className="relation-name">{BRIDE_TITLE}</span>
           </span>{" "}
-          {BRIDE_FULLNAME}
+          <span style={{ fontSize: "1.3rem", fontWeight: "bold", color: "#111" }}>
+            {BRIDE_FULLNAME}
+          </span>
         </div>
       </LazyDiv>
     </>
