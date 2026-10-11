@@ -38,50 +38,55 @@ export const Invitation = () => {
         <div className="break" />
 
         {/* 혼주 및 신랑 정보 */}
-        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.3" }}>
+        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.4" }}>
           {GROOM_FATHER} · {GROOM_MOTHER}
           <span className="relation" style={{ margin: "0 6px", color: "#555" }}>
-            의 <span className="relation-name">{GROOM_TITLE}</span>
+            의{" "}
+            <span
+              className="relation-name"
+              style={{
+                fontSize: "1.45rem",
+                fontWeight: "bold",
+                color: "#111",
+              }}
+            >
+              {GROOM_TITLE}
+            </span>
           </span>{" "}
-          <span style={{ fontSize: "1.3rem", fontWeight: "bold", color: "#111" }}>
+          <span
+            style={{
+              fontSize: "1.45rem",
+              fontWeight: "bold",
+              color: "#111",
+            }}
+          >
             {GROOM_FULLNAME}
           </span>
         </div>
 
         {/* 혼주 및 신부 정보 */}
-        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.3" }}>
+        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.4" }}>
           {BRIDE_FATHER} · {BRIDE_MOTHER}
           <span className="relation" style={{ margin: "0 6px", color: "#555" }}>
-            의 <span className="relation-name">{BRIDE_TITLE}</span>
+            의{" "}
+            <span
+              className="relation-name"
+              style={{
+                fontSize: "1.45rem",
+                fontWeight: "bold",
+                color: "#111",
+              }}
+            >
+              {BRIDE_TITLE}
+            </span>
           </span>{" "}
-          <span style={{ fontSize: "1.3rem", fontWeight: "bold", color: "#111" }}>
-            {BRIDE_FULLNAME}
-          </span>
-        </div>
-      </LazyDiv>
-    </>
-  )
-}
-        <div className="break" />
-
-        {/* 혼주 및 신랑 정보 */}
-        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.3" }}>
-          {GROOM_FATHER} · {GROOM_MOTHER}
-          <span className="relation" style={{ margin: "0 6px", color: "#555" }}>
-            의 <span className="relation-name">{GROOM_TITLE}</span>
-          </span>{" "}
-          <span style={{ fontSize: "1.3rem", fontWeight: "bold", color: "#111" }}>
-            {GROOM_FULLNAME}
-          </span>
-        </div>
-
-        {/* 혼주 및 신부 정보 */}
-        <div className="name" style={{ fontSize: "1.1rem", lineHeight: "2.3" }}>
-          {BRIDE_FATHER} · {BRIDE_MOTHER}
-          <span className="relation" style={{ margin: "0 6px", color: "#555" }}>
-            의 <span className="relation-name">{BRIDE_TITLE}</span>
-          </span>{" "}
-          <span style={{ fontSize: "1.3rem", fontWeight: "bold", color: "#111" }}>
+          <span
+            style={{
+              fontSize: "1.45rem",
+              fontWeight: "bold",
+              color: "#111",
+            }}
+          >
             {BRIDE_FULLNAME}
           </span>
         </div>
